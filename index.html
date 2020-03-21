@@ -1,62 +1,53 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ahtcm.web</title>
-<style type="text/css">
-.字体 {
-	font-size: 28px;
-}
-.new1 {
-	font-family: "Cooper Std Black";
-	font-size: 50px;
-	text-align: center;
-}
-.字体 .字体 {
-	font-size: 36px;
-	text-align: left;
-}
-.new2 {
-	text-align: center;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/moni.css">
+    <script src="js/vue.js"></script>
 </head>
 
-<body class="字体">
-<table width="98%" border="0" cellspacing="1" cellpadding="1">
-  <tr>
-    <td width="19%" height="190"><table width="70%" height="317" border="0" cellpadding="1" cellspacing="1">
-      <tr>
-        <td><img src="picture/logo.png" width="220" height="220" /></td>
-      </tr>
-    </table></td>
-    <td width="81%" class="new1">&nbsp; Welcome To My Personal Website</td>
-  </tr>
-</table>
-<hr />
- <p>&nbsp;</p>
- <img src="picture/下载.jpg" width="250" height="250" alt=""/>
- <table width="75%" border="0" cellspacing="1" cellpadding="1">
-  <tr>
-    <td>name:</td>
-    <td>大熊</td>
-  </tr>
-  <tr>
-    <td>e-mail:</td>
-    <td><div id="avatar-row">
-      <div>
-        <div id="user-info">
-          <div>
-            <p>2200522850@qq.com<br />
-            </p>
-</div>
-        </div>
-      </div>
-    </div></td>
-  </tr>
-  <tr>
-    <td>school:</td>
-    <td>Anhui University of Chinese Medcine</td>
-  </tr>
-</table>
-<p class="字体"></body>
+<body>
+    <header id="banner">
+        <input type="text" name="searchProgram" id="searchProgram" placeholder="输入内容以探索公共项目">
+    </header>
+    <main>
+        <aside class="aside">
+            <div id="reoHead">
+                <p id="reoName">存储仓库</p>
+                <input type="button" id="createReo" value="创建仓库">
+            </div>
+            <input type="text" name="searchReo" id="searchReo" placeholder="搜索您所创建的仓库">
+            <div id="app">
+                <div class="reo" v-for="reoData in Datas">
+                    <p>仓库{{reoData}}（模拟仓库内容）</p>
+                </div>
+            </div>
+            <script>
+                let vm = new Vue({
+                    el: "#app",
+                    data: {
+                        Datas: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                    }
+                })
+            </script>
+        </aside>
+        <article id="main_text">
+            <p id="message">{{message}}</p>
+        </article>
+        <script>
+            let vm2 = new Vue({
+                el: "#main_text",
+                data: {
+                    message: "模拟可以查看的大量信息",
+                }
+            })
+        </script>
+        <aside class="aside"></aside>
+    </main>
+    <footer></footer>
+</body>
+
 </html>
